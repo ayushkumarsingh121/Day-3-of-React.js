@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="root"></div>
+</body>
+<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+  let root = ReactDOM.createRoot(document.getElementById("root"));
+
+  let App = () => {
+    let mathScore = 90
+    let scienceScore = 80
+    let totalScore = mathScore + scienceScore
+    let userName = "Ayush"
+    let avatarUrl = "https://scontent.fixr3-2.fna.fbcdn.net/v/t1.6435-9/137623692_104118368320933_3972924567069328062_n.jpg?stp=dst-jpg_p526x296&_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_ohc=suqCfoIJgJcQ7kNvgF6EwcY&_nc_zt=23&_nc_ht=scontent.fixr3-2.fna&_nc_gid=Agx4nLptrXdm6slEec5buqd&oh=00_AYDKN7Ae8wnv5DFPiaoBq1hoefULCe164DOPkUhgXj3TGg&oe=67372CE9"
+    let styleColor = {color : "blue"}
+    
+    return (
+      <div>
+        <h1 style = {styleColor}>Welcome, {userName}</h1>
+        <img src= {avatarUrl} alt="avataImage"/>
+        <h1 style = {{color : "Red"}}>Your total score {totalScore} </h1>
+        <h1>{userName} is {totalScore > 100 ? "PASS" : "FAIL"}</h1>
+      </div>
+    )
+  }
+  root.render(<App/>)
+
+  // style = {{color : "Red"}} => one {} for js and inside the js we have to use obj so second {} is for obj
+</script>
+
+</html>
